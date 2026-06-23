@@ -43,7 +43,7 @@ export function CommentForm() {
           </label>
         </div>
         <label className="flex gap-3 text-sm leading-6 text-[#6B7280]">
-          <input type="checkbox" className="mt-1 size-4 accent-[#0D9488]" />
+          <input type="checkbox" className="mt-1 size-4 accent-[#0D9488]" suppressHydrationWarning />
           Save my name, email, and website in this browser for the next time I comment.
         </label>
         <Button type="submit">Post Comment</Button>
