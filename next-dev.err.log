@@ -1,0 +1,410 @@
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="geist_a715...">
+                          <body
+                            className="flex min-h-full flex-col"
+-                           __processed_40c9ade1-71b0-42aa-8f85-3c06dd7ce7a6__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+ 
+    at <unknown> (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3439:25)
+    at runWithFiberInDEV (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3438:13)
+    at completeWork (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6885:102)
+    at runWithFiberInDEV (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:131)
+    at completeUnitOfWork (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9622:23)
+    at performUnitOfWork (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64) (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3439:25)
+[browser] Image with src "https://picsum.photos/seed/user-testing-2/900/560" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477:13)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="geist_a715...">
+                          <body
+                            className="flex min-h-full flex-col"
+-                           data-new-gr-c-s-check-loaded="14.1304.0"
+-                           data-gr-ext-installed=""
+                          >
+                  ...
+ 
+    at <unknown> (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3439:25)
+    at runWithFiberInDEV (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3438:13)
+    at completeWork (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6885:102)
+    at runWithFiberInDEV (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:131)
+    at completeUnitOfWork (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9622:23)
+    at performUnitOfWork (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64) (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3439:25)
+⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+      <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} forbidden={undefined} ...>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <Head>
+            <__next_root_layout_boundary__>
+              <SegmentViewNode type="layout" pagePath="layout.tsx">
+                <SegmentTrieNode>
+                <link>
+                <script>
+                <script>
+                <script>
+                <RootLayout>
+                  <html lang="en" className="geist_a715...">
+                    <body className="flex min-h...">
+                      <Header>
+                      <main>
+                      <Footer>
+                        <footer className="border-t b...">
+                          ...
+                            <NewsletterWidget compact={true}>
+                              <form className="space-y-3" onSubmit={function onSubmit}>
+                                <Input value="" onChange={function onChange} placeholder="Email Address" type="email" ...>
+                                  <input
+                                    value=""
+                                    onChange={function onChange}
+                                    placeholder="Email Address"
+                                    type="email"
+                                    required={true}
+                                    className="h-10 w-full rounded-md border border-[#E5E7EB] bg-white px-3 text-sm te..."
+-                                   style={{caret-color:"transparent"}}
+                                  >
+                                ...
+                          ...
+            ...
+ 
+    at <unknown> (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3439:25)
+    at runWithFiberInDEV (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3438:13)
+    at completeWork (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6885:102)
+    at runWithFiberInDEV (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:131)
+    at completeUnitOfWork (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9622:23)
+    at performUnitOfWork (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64) (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3439:25)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+      <HTTPAccessFallbackErrorBoundary pathname="/travel" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <Head>
+            <__next_root_layout_boundary__>
+              <SegmentViewNode type="layout" pagePath="layout.tsx">
+                <SegmentTrieNode>
+                <link>
+                <script>
+                <script>
+                <script>
+                <RootLayout>
+                  <html lang="en" className="geist_a715...">
+                    <body className="flex min-h...">
+                      <Header>
+                      <main>
+                      <Footer>
+                        <footer className="border-t b...">
+                          ...
+                            <NewsletterWidget compact={true}>
+                              <form className="space-y-3" onSubmit={function onSubmit}>
+                                <Input value="" onChange={function onChange} placeholder="Email Address" type="email" ...>
+                                  <input
+                                    value=""
+                                    onChange={function onChange}
+                                    placeholder="Email Address"
+                                    type="email"
+                                    required={true}
+                                    className="h-10 w-full rounded-md border border-[#E5E7EB] bg-white px-3 text-sm te..."
+-                                   style={{caret-color:"transparent"}}
+                                  >
+                                ...
+                          ...
+            ...
+ 
+    at <unknown> (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3439:25)
+    at runWithFiberInDEV (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3438:13)
+    at completeWork (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6885:102)
+    at runWithFiberInDEV (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:131)
+    at completeUnitOfWork (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9622:23)
+    at performUnitOfWork (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64) (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3439:25)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+      <HTTPAccessFallbackErrorBoundary pathname="/blog/how-..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <Head>
+            <__next_root_layout_boundary__>
+              <SegmentViewNode type="layout" pagePath="layout.tsx">
+                <SegmentTrieNode>
+                <link>
+                <script>
+                <script>
+                <script>
+                <RootLayout>
+                  <html lang="en" className="geist_a715...">
+                    <body className="flex min-h...">
+                      <Header>
+                      ...
+                        <div className="mx-auto gr...">
+                          <TableOfContents>
+                          ...
+                            <form className="mt-12 bord..." noValidate={true} onSubmit={function handleSubmit}>
+                              <h2>
+                              <p>
+                              <div className="mt-6 space...">
+                                <Textarea name="comment" placeholder="Comment *" required={true}>
+                                  <textarea
+                                    name="comment"
+                                    placeholder="Comment *"
+                                    required={true}
+                                    className="min-h-36 w-full rounded-md border border-[#E5E7EB] bg-white px-3 py-3 t..."
+-                                   style={{caret-color:"transparent"}}
+                                  >
+                                <div className="grid gap-4...">
+                                  <label className="relative b...">
+                                    <User>
+                                    <Input name="name" placeholder="Name *" required={true} className="pl-9">
+                                      <input
+                                        name="name"
+                                        placeholder="Name *"
+                                        required={true}
+                                        className="h-10 w-full rounded-md border border-[#E5E7EB] bg-white px-3 text-s..."
+-                                       style={{caret-color:"transparent"}}
+                                      >
+                                  <label className="relative b...">
+                                    <Mail>
+                                    <Input name="email" placeholder="Email *" type="email" required={true} ...>
+                                      <input
+                                        name="email"
+                                        placeholder="Email *"
+                                        type="email"
+                                        required={true}
+                                        className="h-10 w-full rounded-md border border-[#E5E7EB] bg-white px-3 text-s..."
+-                                       style={{caret-color:"transparent"}}
+                                      >
+                                <label className="flex gap-3...">
+                                  <input
+                                    type="checkbox"
+                                    className="mt-1 size-4 accent-[#0D9488]"
+-                                   style={{caret-color:"transparent"}}
+                                  >
+                                  ...
+                                ...
+                          ...
+                            <NewsletterWidget compact={true}>
+                              <form className="space-y-3" onSubmit={function onSubmit}>
+                                <Input value="" onChange={function onChange} placeholder="Email Address" type="email" ...>
+                                  <input
+                                    value=""
+                                    onChange={function onChange}
+                                    placeholder="Email Address"
+                                    type="email"
+                                    required={true}
+                                    className="h-10 w-full rounded-md border border-[#E5E7EB] bg-white px-3 text-sm te..."
+-                                   style={{caret-color:"transparent"}}
+                                  >
+                                ...
+                      <Footer>
+                        <footer className="border-t b...">
+                          ...
+                            <NewsletterWidget compact={true}>
+                              <form className="space-y-3" onSubmit={function onSubmit}>
+                                <Input value="" onChange={function onChange} placeholder="Email Address" type="email" ...>
+                                  <input
+                                    value=""
+                                    onChange={function onChange}
+                                    placeholder="Email Address"
+                                    type="email"
+                                    required={true}
+                                    className="h-10 w-full rounded-md border border-[#E5E7EB] bg-white px-3 text-sm te..."
+-                                   style={{caret-color:"transparent"}}
+                                  >
+                                ...
+                          ...
+            ...
+ 
+    at <unknown> (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3439:25)
+    at runWithFiberInDEV (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3438:13)
+    at completeWork (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6885:102)
+    at runWithFiberInDEV (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:131)
+    at completeUnitOfWork (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9622:23)
+    at performUnitOfWork (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64) (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3439:25)
+[browser] Image with src "https://picsum.photos/seed/user-testing-1/900/560" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477:13)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+      <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} forbidden={undefined} ...>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <Head>
+            <__next_root_layout_boundary__>
+              <SegmentViewNode type="layout" pagePath="layout.tsx">
+                <SegmentTrieNode>
+                <link>
+                <script>
+                <script>
+                <script>
+                <RootLayout>
+                  <html lang="en" className="geist_a715...">
+                    <body className="flex min-h...">
+                      <Header>
+                      <main>
+                      <Footer>
+                        <footer className="border-t b...">
+                          ...
+                            <NewsletterWidget compact={true}>
+                              <form className="space-y-3" onSubmit={function onSubmit}>
+                                <Input value="" onChange={function onChange} placeholder="Email Address" type="email" ...>
+                                  <input
+                                    value=""
+                                    onChange={function onChange}
+                                    placeholder="Email Address"
+                                    type="email"
+                                    required={true}
+                                    className="h-10 w-full rounded-md border border-[#E5E7EB] bg-white px-3 text-sm te..."
+-                                   style={{caret-color:"transparent"}}
+                                  >
+                                ...
+                          ...
+            ...
+ 
+    at <unknown> (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3439:25)
+    at runWithFiberInDEV (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3438:13)
+    at completeWork (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6885:102)
+    at runWithFiberInDEV (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:131)
+    at completeUnitOfWork (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9622:23)
+    at performUnitOfWork (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64) (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3439:25)
+[browser] Image with src "https://picsum.photos/seed/user-testing-1/900/560" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading (file://C:/Users/Trend1 Tech/Documents/Codex/2026-06-23/figma-plugin-figma-openai-curated-remote/work/user-testing-blog/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477:13)

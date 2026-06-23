@@ -1,0 +1,80 @@
+
+> user-testing-blog@0.1.0 dev
+> next dev --port 3000
+
+▲ Next.js 16.2.9 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.56.1:3000
+✓ Ready in 969ms
+
+ GET / 200 in 3.4s (next.js: 2.7s, application-code: 677ms)
+ GET /sports-and-fitness 200 in 864ms (next.js: 629ms, application-code: 234ms)
+ GET /food 200 in 1439ms (next.js: 1194ms, application-code: 245ms)
+ GET /health-and-beauty 200 in 124ms (next.js: 15ms, application-code: 109ms)
+ GET /travel 200 in 77ms (next.js: 15ms, application-code: 61ms)
+ GET /food 200 in 100ms (next.js: 17ms, application-code: 84ms)
+ GET /sports-and-fitness 200 in 95ms (next.js: 16ms, application-code: 78ms)
+ GET /tech-and-gadgets 200 in 89ms (next.js: 16ms, application-code: 73ms)
+ GET / 200 in 62ms (next.js: 7ms, application-code: 55ms)
+ GET /food 200 in 80ms (next.js: 14ms, application-code: 66ms)
+ GET / 200 in 61ms (next.js: 6ms, application-code: 55ms)
+ GET / 200 in 253ms (next.js: 13ms, application-code: 240ms)
+ GET /food 200 in 131ms (next.js: 18ms, application-code: 112ms)
+ GET /sports-and-fitness 200 in 74ms (next.js: 15ms, application-code: 59ms)
+ GET /health-and-beauty 200 in 73ms (next.js: 14ms, application-code: 59ms)
+ GET /tech-and-gadgets 200 in 81ms (next.js: 16ms, application-code: 65ms)
+ GET /style 200 in 81ms (next.js: 16ms, application-code: 64ms)
+ GET / 200 in 57ms (next.js: 6ms, application-code: 51ms)
+✓ Compiled in 138ms
+ GET / 200 in 241ms (next.js: 131ms, application-code: 110ms)
+ GET / 200 in 244ms (next.js: 6ms, application-code: 238ms)
+ GET / 200 in 590ms (next.js: 278ms, application-code: 312ms)
+ GET / 200 in 931ms (next.js: 215ms, application-code: 717ms)
+ GET / 200 in 616ms (next.js: 7ms, application-code: 609ms)
+✓ Compiled in 305ms
+ GET / 200 in 793ms (next.js: 161ms, application-code: 632ms)
+ GET / 200 in 498ms (next.js: 285ms, application-code: 213ms)
+ GET / 200 in 196ms (next.js: 135ms, application-code: 61ms)
+ GET / 200 in 201ms (next.js: 18ms, application-code: 183ms)
+ GET / 200 in 591ms (next.js: 11ms, application-code: 580ms)
+ GET / 200 in 179ms (next.js: 101ms, application-code: 78ms)
+✓ Compiled in 69ms
+ GET / 200 in 405ms (next.js: 114ms, application-code: 291ms)
+ GET / 200 in 213ms (next.js: 9ms, application-code: 204ms)
+ GET / 200 in 127ms (next.js: 6ms, application-code: 120ms)
+ GET / 200 in 127ms (next.js: 57ms, application-code: 70ms)
+✓ Compiled in 75ms
+✓ Compiled in 43ms
+ GET / 200 in 360ms (next.js: 107ms, application-code: 253ms)
+ GET / 200 in 193ms (next.js: 5ms, application-code: 189ms)
+ GET / 200 in 141ms (next.js: 8ms, application-code: 133ms)
+ GET / 200 in 141ms (next.js: 75ms, application-code: 66ms)
+✓ Compiled in 45ms
+ GET / 200 in 445ms (next.js: 111ms, application-code: 334ms)
+ GET / 200 in 252ms (next.js: 6ms, application-code: 246ms)
+ GET / 200 in 171ms (next.js: 54ms, application-code: 117ms)
+ GET / 200 in 173ms (next.js: 6ms, application-code: 168ms)
+ GET / 200 in 173ms (next.js: 103ms, application-code: 70ms)
+✓ Compiled in 67ms
+✓ Compiled in 47ms
+ GET / 200 in 384ms (next.js: 133ms, application-code: 251ms)
+ GET / 200 in 180ms (next.js: 7ms, application-code: 173ms)
+ GET / 200 in 79ms (next.js: 8ms, application-code: 71ms)
+ GET / 200 in 359ms (next.js: 7ms, application-code: 353ms)
+ GET /travel 200 in 518ms (next.js: 132ms, application-code: 387ms)
+ GET /blog/how-ai-and-remote-work-are-shaping-the-future 200 in 1274ms (next.js: 1127ms, application-code: 147ms)
+ GET / 200 in 209ms (next.js: 7ms, application-code: 203ms)
+ GET / 200 in 186ms (next.js: 6ms, application-code: 179ms)
+ GET /travel 200 in 158ms (next.js: 15ms, application-code: 144ms)
+ GET /blog/how-ai-and-remote-work-are-shaping-the-future 200 in 126ms (next.js: 14ms, application-code: 113ms)
+ GET / 200 in 135ms (next.js: 5ms, application-code: 130ms)
+ GET / 200 in 169ms (next.js: 6ms, application-code: 163ms)
+ GET /travel 200 in 187ms (next.js: 16ms, application-code: 171ms)
+ GET /blog/how-ai-and-remote-work-are-shaping-the-future 200 in 156ms (next.js: 20ms, application-code: 135ms)
+ GET /about 200 in 730ms (next.js: 623ms, application-code: 107ms)
+ GET /contact 200 in 644ms (next.js: 513ms, application-code: 131ms)
+ GET /terms 200 in 722ms (next.js: 654ms, application-code: 68ms)
+ GET /privacy 200 in 624ms (next.js: 536ms, application-code: 88ms)
+ GET / 200 in 288ms (next.js: 10ms, application-code: 278ms)
+ GET /food 200 in 83ms (next.js: 35ms, application-code: 49ms)
+ GET /health-and-beauty 200 in 83ms (next.js: 13ms, application-code: 70ms)
