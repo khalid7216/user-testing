@@ -78,3 +78,4 @@
  GET / 200 in 288ms (next.js: 10ms, application-code: 278ms)
  GET /food 200 in 83ms (next.js: 35ms, application-code: 49ms)
  GET /health-and-beauty 200 in 83ms (next.js: 13ms, application-code: 70ms)
+ GET / 200 in 209ms (next.js: 15ms, application-code: 193ms)
